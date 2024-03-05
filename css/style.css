@@ -1,0 +1,23 @@
+/* CSS EXTERNO*/
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/*Uso de ID eu inicio com # */
+#cabecalho{
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+#navegacao{
+    background-color: blue;
+    padding: 10px;
+}
+
+#navegacao a{
+text-decoration: none;
+padding: 5px;
+border-color: azure;
+}
