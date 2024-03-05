@@ -12,12 +12,26 @@ body{
     text-align: center;
 }
 #navegacao{
-    background-color: blue;
+    background-color: red;
     padding: 10px;
+    text-align: center;
+    font-style: normal;
 }
 
 #navegacao a{
 text-decoration: none;
 padding: 5px;
-border-color: 1px; azure;
+border: 1px black;
 }
+
+#navegacao a:hover{
+    background-color: grey;
+    color: aqua;
+    padding: 5px;
+    border-color: 1px;
+    }
+    
+    .conteudo-princ{
+        height: 200px;
+        padding: 50px;
+    }
