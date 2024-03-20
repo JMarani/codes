@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#jogo {
+    width: 500px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.cabecalho {
+    background-color: #eee;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+#tempo {
+    float: right;
+    font-size: 14px;
+    color: #999;
+}
+
+.tabuleiro {
+    padding: 10px;
+}
+
+.linha {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.letra {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc
+}
