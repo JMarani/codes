@@ -21,14 +21,16 @@
             <h2>Carrinho de Compras</h2>
             <div id="cart-items"></div>
             <p>Total: <span id="cart-total">R$ 0.00</span></p>
-            <button id="checkout-button">Finalizar Compra</button>
+            <button class="image-button" onclick="proximapagina()">Finalizar Compra</button>
         </section>
     </main>
 
     <script src="script.js"></script>
     <script>
-       
-        document.addEventListener('DOMContentLoaded', renderProducts);
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            renderCart();
+        });
     </script>
 </body>
 </html>

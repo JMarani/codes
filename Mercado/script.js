@@ -1,8 +1,7 @@
-// Data Storage (Simulating database with localStorage for simplicity)
 const products = JSON.parse(localStorage.getItem('products')) || [];
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Render functions
+
 function renderProducts() {
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
@@ -11,7 +10,7 @@ function renderProducts() {
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
         productDiv.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
+            <img src="${product.image}" alt="${product.name}" onerror="this.src='placeholder.png';">
             <h3>${product.name}</h3>
             <p>${product.description}</p>
             <p>R$ ${product.price.toFixed(2)}</p>
@@ -31,7 +30,7 @@ function renderCart() {
         const cartItemDiv = document.createElement('div');
         cartItemDiv.classList.add('cart-item');
         cartItemDiv.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
+            <img src="${product.image}" alt="${product.name}" onerror="this.src='placeholder.png';">
             <h4>${product.name}</h4>
             <p>Quantidade: ${item.quantity}</p>
             <button onclick="removeFromCart(${item.productId})">Remover</button>
@@ -41,7 +40,7 @@ function renderCart() {
     document.getElementById('cart-total').innerText = `R$ ${total.toFixed(2)}`;
 }
 
-// Cart functions
+
 function addToCart(productId) {
     const cartItem = cart.find(item => item.productId === productId);
     if (cartItem) {
@@ -85,21 +84,21 @@ function saveProduct(event) {
     const image = document.getElementById('product-image').value;
 
     if (id) {
-        // Edit existing product
+      
         const product = products.find(p => p.id === parseInt(id));
         product.name = name;
         product.price = price;
         product.description = description;
         product.image = image;
     } else {
-        // Add new product
+       
         products.push({ id: products.length + 1, name, price, description, image });
     }
 
     localStorage.setItem('products', JSON.stringify(products));
-    console.log('Products saved to localStorage:', products); // Log the products
+    console.log('Products saved to localStorage:', products); 
     renderAdminProducts();
-    renderProducts(); // Ensure the product list is updated on the main page
+    renderProducts(); 
 }
 
 function renderAdminProducts() {
@@ -109,7 +108,7 @@ function renderAdminProducts() {
         const productDiv = document.createElement('div');
         productDiv.classList.add('admin-product');
         productDiv.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
+            <img src="${product.image}" alt="${product.name}" onerror="this.src='placeholder.png';">
             <h3>${product.name}</h3>
             <p>R$ ${product.price.toFixed(2)}</p>
             <button onclick="editProduct(${product.id})">Editar</button>
@@ -138,26 +137,54 @@ function deleteProduct(productId) {
     renderProducts();
 }
 
-// Checkout function
+
 function checkout() {
     if (cart.length === 0) {
         alert('O carrinho está vazio!');
         return;
     }
 
-    // For simplicity, we'll just clear the cart and show an alert
-    alert('Compra realizada com sucesso!');
-    localStorage.removeItem('cart');
-    renderCart();
+   
+    window.location.href = 'checkout.html';
 }
 
-// Event listeners
+
+function handleAddressForm(event) {
+    event.preventDefault();
+    const address = document.getElementById('address').value;
+    const city = document.getElementById('city').value;
+    const state = document.getElementById('state').value;
+    const zip = document.getElementById('zip').value;
+
+    const userAddress = {
+        address,
+        city,
+        state,
+        zip
+    };
+
+    localStorage.setItem('userAddress', JSON.stringify(userAddress));
+    alert('Compra realizada com sucesso!');
+    localStorage.removeItem('cart');
+    window.location.href = 'index.html'; // Redirect back to the home page
+}
+
+
 document.getElementById('login-form').addEventListener('submit', login);
 document.getElementById('product-form').addEventListener('submit', saveProduct);
 document.getElementById('checkout-button').addEventListener('click', checkout);
 
-// Initial render
+
+if (window.location.pathname.includes('checkout.html')) {
+    document.getElementById('address-form').addEventListener('submit', handleAddressForm);
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
     renderCart();
 });
+
+function proximapagina(){
+    window.location.href = "./checkout.html";
+}
