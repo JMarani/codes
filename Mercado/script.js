@@ -61,7 +61,7 @@ function removeFromCart(productId) {
     renderCart();
 }
 
-// Admin functions
+
 function login(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
