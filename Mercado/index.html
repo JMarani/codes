@@ -8,15 +8,14 @@
 </head>
 <body>
     <header>
-        <h1>Mercadinho Digital</h1>
+        <button id="admin-button" onclick="location.href='admin.html'">Admin</button>
+        <h1>Mercadinho BigBom</h1>
     </header>
-
     <main>
         <section id="catalog">
             <h2>Catálogo de Produtos</h2>
             <div id="product-list"></div>
         </section>
-
         <section id="cart">
             <h2>Carrinho de Compras</h2>
             <div id="cart-items"></div>
@@ -24,13 +23,6 @@
             <button class="image-button" onclick="proximapagina()">Finalizar Compra</button>
         </section>
     </main>
-
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProducts();
-            renderCart();
-        });
-    </script>
 </body>
 </html>

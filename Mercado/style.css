@@ -13,7 +13,23 @@ header {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+#admin-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #101dd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#admin-button:hover {
+    background-color: #45a049;
+}
+header {
+    position: relative;
+}
 main {
     display: flex;
     justify-content: space-around;
@@ -45,6 +61,8 @@ h2 {
     border-top: 1px solid #ddd;
     padding-top: 1em;
 }
+
+
 
 button {
     background-color: #4A90E2;

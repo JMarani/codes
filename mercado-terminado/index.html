@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mercadinho BigBomba</h1>
+        <nav>
+            <button onclick="location.href='admin.html'">Admin</button>
+            <button id="botao-carrinho">
+                <img src="images.png" alt="Carrinho de Compras">
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section id="catalogo-produtos">
+            <h2>Catálogo de Produtos</h2>
+            <div id="produtos"></div>
+        </section>
+    </main>
+    <div id="modal-carrinho" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar">&times;</span>
+            <h2>Carrinho de Compras</h2>
+            <div id="itens-carrinho"></div>
+            <p>Total: <span id="total-carrinho">R$ 0,00</span></p>
+            <button id="botao-finalizar-compra">Finalizar Compra</button>
+        </div>
+    </div>
+    <div id="modal-finalizar" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar">&times;</span>
+            <h2>Finalizar Compra</h2>
+            <form id="form-finalizar">
+                <label for="endereco-entrega">Endereço de Entrega:</label>
+                <input type="text" id="endereco-entrega" required>
+                <label for="metodo-pagamento">Método de Pagamento:</label>
+                <select id="metodo-pagamento" required>
+                    <option value="cartao-credito">Cartão de Crédito</option>
+                    <option value="boleto">Boleto</option>
+                </select>
+                <button type="submit">Confirmar Pedido</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

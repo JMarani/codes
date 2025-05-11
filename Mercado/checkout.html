@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,10 +19,12 @@
                 <input type="text" id="address" required>
                 <label for="city">Cidade:</label>
                 <input type="text" id="city" required>
-                <label for="state">Estado:</label>
-                <input type="text" id="state" required>
-                <label for="zip">CEP:</label>
-                <input type="text" id="zip" required>
+                <label for="payment">Método de Pagamento:</label>
+                <select id="payment" required>
+                    <option value="credito">Cartão de Crédito</option>
+                    <option value="debito">Cartão de Débito</option>
+                    <option value="dinheiro">Dinheiro</option>
+                </select>
                 <button type="submit">Confirmar Compra</button>
             </form>
         </section>
